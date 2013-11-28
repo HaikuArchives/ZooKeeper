@@ -1,0 +1,19 @@
+3.0 Features
+
+-- Add MuTerminal as an alternative to Terminal.
+
+-- Save window location/size to app attributes instead of in ~/config/settings
+
+-- Add defaults, when missing  
+  (needs changing use of the boolean attributes)
+
+-- In ReadyToRun, Show window-case, display BAlert if there are duplicates
+
+-- Filter out unsupported filetypes
+	-- Identify files without filetypes
+
+-- Recurse on refs message
+
+-- One or many scripts
+   1. Run a separate script for each file in the set
+   2. Run only one script for all of the file set 

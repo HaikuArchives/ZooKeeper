@@ -1,0 +1,18 @@
+
+1.0
+	First release.
+
+1.1	
+	Patch by Lars Hansson <lars@unet.net.ph>
+	Makes the temporary shell script trap signals and remove itself.
+
+2.0	
+	- Tracker add-on launch method added
+	- $files changed to $zkfiles
+	- $zkfolder added  (for Tracker add-on use)
+	- user interace changes
+	- code clean-up / mess-up
+
+2.1
+	- fixed a bug which made "In Terminal"-mode not work
+	  for executables with spaces in the filename
