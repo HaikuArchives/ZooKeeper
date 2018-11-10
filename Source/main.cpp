@@ -20,7 +20,7 @@
 #include <Query.h>
 #include <Roster.h>
 #include <String.h>
-#include <TrackerAddon.h>
+#include <TrackerAddOn.h>
 #include <VolumeRoster.h>
 
 #include <fs_attr.h>

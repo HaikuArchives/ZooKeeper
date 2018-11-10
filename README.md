@@ -1,3 +1,11 @@
+# ZooKeeper
+
+###  by Jonas Sundstrom
+
+#### copyleft 2004, 2005, Public Domain
+
+![screenshot](screenshot.png)
+
 ZooKeeper is a glue application (or frontend) that lets you 
 specify a shell command or script to be executed on a set
 of files.

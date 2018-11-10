@@ -1,6 +1,8 @@
 #ifndef __EDIT_VIEW_H__
 #define __EDIT_VIEW_H__
 
+#include <Application.h>
+#include <InterfaceKit.h>
 #include <Box.h>
 #include <MenuField.h>
 

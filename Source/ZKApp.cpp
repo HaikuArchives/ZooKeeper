@@ -13,6 +13,7 @@
 #include <Path.h>
 #include <Entry.h>
 #include <FindDirectory.h>
+#include <storage/FindDirectory.h>
 #include <Directory.h>
 #include <Node.h>
 #include <fs_attr.h>
@@ -389,7 +390,7 @@ ZooKeeperApp::MakeTempFolder(void)
 
 	status_t status;
 	BPath p;
-	if (find_directory(B_COMMON_TEMP_DIRECTORY, &p) != B_OK)	return B_ERROR;
+	if (find_directory(B_SYSTEM_TEMP_DIRECTORY, &p) != B_OK)	return B_ERROR;
 	
 	m_tmp_dir	=	new BDirectory();
 	BDirectory temp_dir;
