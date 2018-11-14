@@ -6,17 +6,16 @@
 #include <string.h>
 #include <unistd.h>
 
-#include <Application.h>
-#include <Roster.h>
 #include <Alert.h>
-#include <String.h>
-#include <Path.h>
+#include <Application.h>
+#include <Directory.h>
 #include <Entry.h>
 #include <FindDirectory.h>
-#include <storage/FindDirectory.h>
-#include <Directory.h>
-#include <Node.h>
 #include <fs_attr.h>
+#include <Node.h>
+#include <Path.h>
+#include <Roster.h>
+#include <String.h>
 
 #include "ZKApp.h"
 #include "ZKWindow.h"
