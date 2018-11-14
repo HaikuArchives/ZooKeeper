@@ -12,6 +12,10 @@ resource app_version {
 	long_info = "ZooKeeper"
 };
 
+resource file_types message {
+	"types" = "application/octet-stream"
+};
+
 resource app_flags B_EXCLUSIVE_LAUNCH;
 
 resource large_icon array {
@@ -66,8 +70,4 @@ resource mini_icon array {
 	$"FFFFFF06FF00FBFBB0000000100000FF"
 	$"FFFFFFFFFFFF00FBB0000000000000FF"
 	$"FF00FFFFFFFFFFFF060606000006FFFF"
-};
-
-resource file_types message {
-	"types" = "application/octet-stream"
 };
