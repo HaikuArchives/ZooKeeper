@@ -2,6 +2,7 @@
 #define __ZK_APP_H__
 
 #include <Application.h>
+#include <StorageKit.h>
 #include <String.h>
 #include <Entry.h>
 

@@ -6,16 +6,16 @@
 #include <string.h>
 #include <unistd.h>
 
-#include <Application.h>
-#include <Roster.h>
 #include <Alert.h>
-#include <String.h>
-#include <Path.h>
+#include <Application.h>
+#include <Directory.h>
 #include <Entry.h>
 #include <FindDirectory.h>
-#include <Directory.h>
-#include <Node.h>
 #include <fs_attr.h>
+#include <Node.h>
+#include <Path.h>
+#include <Roster.h>
+#include <String.h>
 
 #include "ZKApp.h"
 #include "ZKWindow.h"
@@ -365,7 +365,7 @@ ZooKeeperApp::RunScript(void)
 	{
 		command_string.Prepend(" ");
 		command_string.Prepend(app_name.String());
-		command_string.Prepend("/boot/beos/apps/Terminal -t ");
+		command_string.Prepend("/boot/system/apps/Terminal -t");
 	}
 	
 	command_string.Append(" &");
@@ -389,7 +389,7 @@ ZooKeeperApp::MakeTempFolder(void)
 
 	status_t status;
 	BPath p;
-	if (find_directory(B_COMMON_TEMP_DIRECTORY, &p) != B_OK)	return B_ERROR;
+	if (find_directory(B_SYSTEM_TEMP_DIRECTORY, &p) != B_OK)	return B_ERROR;
 	
 	m_tmp_dir	=	new BDirectory();
 	BDirectory temp_dir;
