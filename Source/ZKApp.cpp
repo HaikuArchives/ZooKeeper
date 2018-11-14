@@ -365,7 +365,7 @@ ZooKeeperApp::RunScript(void)
 	{
 		command_string.Prepend(" ");
 		command_string.Prepend(app_name.String());
-		command_string.Prepend("/boot/beos/apps/Terminal -t ");
+		command_string.Prepend("/boot/system/apps/Terminal -t");
 	}
 	
 	command_string.Append(" &");
