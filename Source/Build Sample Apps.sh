@@ -3,28 +3,20 @@
 dir=$(dirname "$0")
 cd "$dir"
 
-if [ ! -e ZooKeeper-O ]; then
-	action=$(alert "Can't find ZooKeeper-O. Build it first." "Ok")
+if [ ! -e ZooKeeper ]; then
+	action=$(alert "Can't find ZooKeeper. Build it first." "Ok")
 	exit
 fi
 
 mkdir "../Sample Applications"
 
-rm "../Sample Applications/EmacsOpener"
-rm "../Sample Applications/GhostOpener"
-rm "../Sample Applications/ListFolder"
-rm "../Sample Applications/MountThis"
-rm "../Sample Applications/PicoOpener"
-rm "../Sample Applications/PrefAppStripper"
-rm "../Sample Applications/SmpegOpener-S"
-
-cp ZooKeeper-O "../Sample Applications/EmacsOpener"
-cp ZooKeeper-O "../Sample Applications/GhostOpener"
-cp ZooKeeper-O "../Sample Applications/ListFolder"
-cp ZooKeeper-O "../Sample Applications/MountThis"
-cp ZooKeeper-O "../Sample Applications/PicoOpener"
-cp ZooKeeper-O "../Sample Applications/PrefAppStripper"
-cp ZooKeeper-O "../Sample Applications/SmpegOpener-S"
+cp ZooKeeper "../Sample Applications/EmacsOpener"
+cp ZooKeeper "../Sample Applications/GhostOpener"
+cp ZooKeeper "../Sample Applications/ListFolder"
+cp ZooKeeper "../Sample Applications/MountThis"
+cp ZooKeeper "../Sample Applications/PicoOpener"
+cp ZooKeeper "../Sample Applications/PrefAppStripper"
+cp ZooKeeper "../Sample Applications/SmpegOpener-S"
 
 xres -o "../Sample Applications/EmacsOpener" "Sample App Resources/EmacsOpener.rsrc"
 xres -o "../Sample Applications/GhostOpener" "Sample App Resources/GhostOpener.rsrc"

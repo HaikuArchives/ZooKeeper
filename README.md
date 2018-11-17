@@ -14,25 +14,26 @@ It's designed to be cloned and customized.
 
 ### How to install
 Simply run `make`, and copy the app ZooKeeper into `~/config/non-packaged/add-ons/Tracker`.
+To run examples, copy the binary to the same folder as the "Build Sample Apps.sh"
+and run `sh "Build Sample Apps.sh"`. The samples should be in the parent directory.
 
 ### How to use
 1) Open ZooKeeper.
-2) Set the command. Other options are optional.
+2) Set the command.
 `$zkfiles` is the file argument for your command.
+I also recommend checking off "In Terminal" and "Keep Open".
 3) Quit ZooKeeper.
 4) Choose any file you want to open with ZooKeeper.
 Right click on the file, go to "Open with...", and select ZooKeeper.
 5) ZooKeeper should automatically execute the command on the files
 you selected.
 
-### What could go wrong?
-ZooKeeper currently has no error reporting GUIs. It does report errors
-when it is executed on a command line.
+### Something went wrong!
+If you receive an alert "The command failed to run":
+1) Open ZooKeeper
+2) Toggle "In Terminal" and "Keep Open".
+3) Re-run ZooKeeper, and you should get a terminal output of the error.
 
-When you see ZooKeeper launching and quitting without any actions being done,
-it is usually because the command that you set are incorrect.
-But it's best to run ZooKeeper with `./ZooKeeper [file or dir]`. You should then
-see what is causing the error.
 
 ### Additional Information
 When launched without any arguments or files ZooKeeper
