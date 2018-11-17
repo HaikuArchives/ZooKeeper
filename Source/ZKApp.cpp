@@ -352,7 +352,7 @@ ZooKeeperApp::RunScript(void)
 		exit(-1);
 		
 	tmp_file.Write(kickstart_script.String(), kickstart_script.Length());
-	
+	printf("%s", kickstart_script.String());
 	// open Terminal with kickstart script
 	
 	BPath	tempfile_path	(m_tmp_dir, tempfile_name.String());
@@ -367,9 +367,10 @@ ZooKeeperApp::RunScript(void)
 		command_string.Prepend(app_name.String());
 		command_string.Prepend("/boot/system/apps/Terminal -t");
 	}
-	
+	// This should solve the permission error.
+	command_string.Prepend("sh ");
 	command_string.Append(" &");
-	
+	printf("%s", command_string.String());
 	PRINT(("system(%s)\n", command_string.String()));
 	system(command_string.String());	
 }
