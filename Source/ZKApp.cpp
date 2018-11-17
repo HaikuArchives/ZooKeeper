@@ -119,7 +119,7 @@ ZooKeeperApp::AboutRequested	(void)
 {
 	PRINT(("ZooKeeperApp::AboutRequested()\n"));
 
-	BAlert * alert = new BAlert("ZooKeeper", "ZooKeeper 2.1\n\n"
+	BAlert * alert = new BAlert("ZooKeeper", "ZooKeeper 2.1.1\n\n"
 	
 	"created by Jonas Sundström\n"
 	"www.kirilla.com\n"
