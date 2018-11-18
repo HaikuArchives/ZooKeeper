@@ -323,15 +323,24 @@ ZooKeeperApp::RunScript(void)
 	kickstart_script.Append("trap 'rm -f \"$0\"' 0 1 2 3 13 15\n");
 
 	// working dir
+	kickstart_script.Append("\nset -x\n");
 	kickstart_script.Append("cd ");	
-	kickstart_script.Append(m_dir);	
-	kickstart_script.Append("\n");	
+	kickstart_script.Append(m_dir);
+	kickstart_script.Append("\n");
 
 	// command
 	kickstart_script.Append(m_command);
 	kickstart_script.Append("\n");
 	
+	// error check
+	kickstart_script.Append("if [ $? -eq 0 ]; then\n");
+	kickstart_script.Append("\taction=$(alert \"Success!\" \"Ok\")\nelse\n");
+	kickstart_script.Append(
+		"\taction=$(alert \"The command failed to run.\" \"Ok\")\nfi\n"
+	);
+	
 	// keep open
+	kickstart_script.Append("\nset +x\n");
 	if (m_keep_open && m_in_terminal)
 		kickstart_script.Append("read -p \"\n(Press Enter to close)\"\n");
 
@@ -352,26 +361,32 @@ ZooKeeperApp::RunScript(void)
 		exit(-1);
 		
 	tmp_file.Write(kickstart_script.String(), kickstart_script.Length());
-	
+	printf("Printing script file\n================================\n\
+%s", kickstart_script.String());
 	// open Terminal with kickstart script
 	
 	BPath	tempfile_path	(m_tmp_dir, tempfile_name.String());
-	BString command_string	(tempfile_path.Path());
+	BString command_string	("chmod +x ");
 	
 	BString	app_name = m_app_ref.name;
 	MakeShellSafe(& app_name);
-
+	
+	command_string.Append(tempfile_path.Path());
+	command_string.Append(" & ");
+	
 	if (m_in_terminal)
 	{
-		command_string.Prepend(" ");
-		command_string.Prepend(app_name.String());
-		command_string.Prepend("/boot/system/apps/Terminal -t");
+		command_string.Append("/boot/system/apps/Terminal -t ");
+		command_string.Append(app_name.String());
+		command_string.Append(" ");
 	}
-	
+	// This should solve the permission error.
+	else command_string.Append("sh ");
+	command_string.Append(tempfile_path.Path());
 	command_string.Append(" &");
-	
+	printf("================================\n%s", command_string.String());
 	PRINT(("system(%s)\n", command_string.String()));
-	system(command_string.String());	
+	system(command_string.String());
 }
 
 void
